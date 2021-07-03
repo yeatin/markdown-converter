@@ -6,11 +6,7 @@ const sendHtml = () => {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ 'type': 'html', 'value': text })
     })
-        .then(fetch('https://markdown-converter-api.herokuapp.com/download', {
-            method: 'post',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ 'type': 'html', 'value': text })
-        }))
+        .then(fetch('https://markdown-converter-api.herokuapp.com/downloadHtml'))
         .catch(err => {
             console.log(err);
         });
@@ -24,11 +20,7 @@ const sendPdf = () => {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ 'type': 'pdf', 'value': text })
     })
-        .then(fetch('https://markdown-converter-api.herokuapp.com/download', {
-            method: 'post',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ 'type': 'pdf', 'value': text })
-        }))
+        .then(fetch('https://markdown-converter-api.herokuapp.com/downloadPdf'))
         .catch(err => {
             console.log(err);
         });

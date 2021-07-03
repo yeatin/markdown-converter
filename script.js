@@ -7,7 +7,7 @@ const sendHtml = () => {
         body: JSON.stringify({ 'type': 'html', 'value': text })
     })
         .then(fetch('https://markdown-converter-api.herokuapp.com/download', {
-            method: 'get',
+            method: 'post',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ 'type': 'html', 'value': text })
         }))
@@ -25,7 +25,7 @@ const sendPdf = () => {
         body: JSON.stringify({ 'type': 'pdf', 'value': text })
     })
         .then(fetch('https://markdown-converter-api.herokuapp.com/download', {
-            method: 'get',
+            method: 'post',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ 'type': 'pdf', 'value': text })
         }))

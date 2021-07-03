@@ -6,7 +6,7 @@ const sendHtml = () => {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ 'type': 'html', 'value': text })
     })
-        .then(fetch('https://lit-waters-04527.herokuapp.com/https://markdown-converter-api.herokuapp.com/downloadHtml'))
+        .then(res => window.open('https://markdown-converter-api.herokuapp.com/result.html'))
         .then(console.log('downloaded'))
         .catch(err => {
             console.log(err);
@@ -21,7 +21,7 @@ const sendPdf = () => {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ 'type': 'pdf', 'value': text })
     })
-        .then(fetch('https://lit-waters-04527.herokuapp.com/https://markdown-converter-api.herokuapp.com/downloadPdf'))
+    .then(res => window.open('https://markdown-converter-api.herokuapp.com/result.pdf'))
         .catch(err => {
             console.log(err);
         });
